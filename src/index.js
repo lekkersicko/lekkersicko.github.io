@@ -16,6 +16,16 @@ let searchTimeout;
 const cardsDOM = document.querySelector('#cards')
 const searchDOM = document.querySelector('#search')
 
+const podcastCheckbox = document.getElementById('podcast-checkbox');
+const streamCheckbox = document.getElementById('stream-checkbox');
+const videoCheckbox = document.getElementById('video-checkbox');
+
+let videoType = {
+    podcasts: podcastCheckbox.checked,
+    videos: videoCheckbox.checked,
+    streams: streamCheckbox.checked
+};
+
 // Example list for the search bar
 const exampleList = [
     'Pokémon',
@@ -44,9 +54,26 @@ searchDOM.addEventListener('input', (e) => {
 
     // We use a short delay to prevent the search from triggering on every keypress
     searchTimeout = setTimeout(() => {
-        Search(e.target.value)
+        Search(e.target.value, videoType)
     }, 250)
 })
+
+
+// Add event listeners to checkboxes
+podcastCheckbox.addEventListener('change', () => {
+    videoType.podcasts = podcastCheckbox.checked;
+    Search(searchDOM.value, videoType);
+});
+
+streamCheckbox.addEventListener('change', () => {
+    videoType.streams = streamCheckbox.checked;
+    Search(searchDOM.value, videoType);
+});
+
+videoCheckbox.addEventListener('change', () => {
+    videoType.videos = videoCheckbox.checked;
+    Search(searchDOM.value, videoType);
+});
 
 document.getElementById('cards').addEventListener('click', function (event) {
     // Identify if the click event is from a card
@@ -117,7 +144,7 @@ function NormalizeString(s) {
     return s == null ? '' : s.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "")
 }
 
-async function Search(input) {
+async function Search(input, videoType = {podcasts: true, videos: true, streams: true}) {
     const filtered = []
 
     // Copy the data object
@@ -127,6 +154,12 @@ async function Search(input) {
         streams: data.streams.slice(),
     }
 
+    // Check if the videoType object has property set to false
+    // If so, remove that video type from the filteredData object
+    if(!videoType.podcasts) filteredData.podcasts = [];
+    if(!videoType.videos)   filteredData.videos = [];
+    if(!videoType.streams)  filteredData.streams = [];
+    
     const normalizedInput = NormalizeString(input)
 
     const words = [];

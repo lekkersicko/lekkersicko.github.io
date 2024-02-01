@@ -9,23 +9,35 @@
     <link rel="stylesheet" href="style.css?146">
 </head>
 
-<body>
-    <h1 id="title">Lekker Speuren</h1>
+    <body>
+        <h1 id="title">Lekker Speuren</h1>
 
-    <input id="search" type="text" autofocus>
+        <input id="search" type="text" autofocus>
 
-    <div id="containers">
-        <div id="cards">
+        <div id="containers">
+            <div id="cards">
+            </div>
+            
+
+            <div id="detailed" class="empty"></div>
+            <div id="checkboxes">
+                <label for="podcast-checkbox">Podcast</label>
+                <input id="podcast-checkbox" type="checkbox" name="media-type" value="podcast">
+        
+                <label for="stream-checkbox">Stream</label>
+                <input id="stream-checkbox" type="checkbox" name="media-type" value="stream">
+        
+                <label for="video-checkbox">Video</label>
+                <input id="video-checkbox" type="checkbox" name="media-type" value="video">
+            </div>
+            
         </div>
 
-        <div id="detailed" class="empty"></div>
-    </div>
-
-    <footer>
-        <p>Gemaakt door Sheepolution. Bekijk het project op <a
-                href="https://github.com/lekkersicko/lekker-speuren">Github</a>.</p>
-        <p>Data verzameld en verwerkt door Sheepolution, Braxshinoa, Donnosaurus, CappiSteijns, en LolligeOllie.</p>
-    </footer>
-</body>
+        <footer>
+            <p>Gemaakt door Sheepolution. Bekijk het project op <a
+                    href="https://github.com/lekkersicko/lekker-speuren">Github</a>.</p>
+            <p>Data verzameld en verwerkt door Sheepolution, Braxshinoa, Donnosaurus, CappiSteijns, en LolligeOllie.</p>
+        </footer>
+    </body>
 
 </html>
