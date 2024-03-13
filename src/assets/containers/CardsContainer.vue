@@ -1,5 +1,5 @@
 <template>
-    <div class="row g-2 mb-3">
+    <div class="row g-3 mt-0">
         <template v-if="view === 'random'">
             <div class="col-12">Dit zijn 12 <b>random</b> items speciaal voor jou!
                 <button type="button" class="btn btn-sm btn-link" @click="contentStore.pickRandomSet()">Geef me wat anders.</button>
