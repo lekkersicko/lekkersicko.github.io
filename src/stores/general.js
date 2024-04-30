@@ -126,6 +126,12 @@ export const useGeneralStore = defineStore('general', {
                     res.push(store.content.find(c => c.id === id))
             })
             return res
+        },
+        setLocaleStorageFromFile(userData) {
+            localStorage.setItem("likedItems", JSON.stringify(userData.likedItems));
+            localStorage.setItem("seenItems", JSON.stringify(userData.seenItems));
+            localStorage.setItem("history", JSON.stringify(userData.history));
+            localStorage.setItem("playlists", JSON.stringify(userData.playlists));
         }
     }
 })

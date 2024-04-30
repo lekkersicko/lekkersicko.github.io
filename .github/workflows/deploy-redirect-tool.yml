@@ -1,0 +1,22 @@
+name: Deploy to GH Pages Redirect
+on:
+  push:
+    branches:
+      - redirect-tool
+jobs:
+  build_vue:
+    runs-on: ubuntu-latest
+    name: Build Vue
+    steps:
+      - uses: actions/checkout@v2
+      - id: Build-Vue
+        run: | 
+          npm ci
+          npm run build
+          cd dist
+          ln -s index.html 404.html
+          git init
+          git add -A
+          git commit -m 'deploy'
+          git push -f https://lekkersicko:${{ secrets.GITHUB_TOKEN }}@github.com/lekkersicko/lekkersicko.github.io.git master:gh-pages-redirect
+        shell: bash

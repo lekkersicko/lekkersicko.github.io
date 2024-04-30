@@ -15,14 +15,17 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav">
+<!--                            <li class="nav-item">-->
+<!--                                <router-link class="nav-link" to="/" active-class="active">Home</router-link>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <router-link class="nav-link" to="/series" active-class="active">Series</router-link>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <router-link class="nav-link" to="/you" active-class="active">You</router-link>-->
+<!--                            </li>-->
                             <li class="nav-item">
-                                <router-link class="nav-link" to="/" active-class="active">Home</router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link class="nav-link" to="/series" active-class="active">Series</router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link class="nav-link" to="/you" active-class="active">You</router-link>
+                                <router-link class="nav-link" to="/move" active-class="active">Verhuizing</router-link>
                             </li>
                         </ul>
                         <ul class="navbar-nav ms-auto">
