@@ -15,30 +15,31 @@ const router = createRouter({
       name: 'home',
       redirect: '/move'
     },
-    {
-      path: '/series',
-      children: [
-        { path: '', name: 'series', component: SeriesView },
-        { path: ':id', name: 'single-serie', component: SingleSeriesView },
-      ]
-    },
-    {
-      path: '/you',
-      children: [
-        { path: '', name: 'you', component: YouView},
-        { path: 'playlist/:title', name: 'single-playlist', component: SinglePlaylistView},
-      ]
-    },
-    {
-      path: '/item/:id',
-      name: 'single-item',
-      component: SingleItemView
-    },
+    // {
+    //   path: '/series',
+    //   children: [
+    //     { path: '', name: 'series', component: SeriesView },
+    //     { path: ':id', name: 'single-serie', component: SingleSeriesView },
+    //   ]
+    // },
+    // {
+    //   path: '/you',
+    //   children: [
+    //     { path: '', name: 'you', component: YouView},
+    //     { path: 'playlist/:title', name: 'single-playlist', component: SinglePlaylistView},
+    //   ]
+    // },
+    // {
+    //   path: '/item/:id',
+    //   name: 'single-item',
+    //   component: SingleItemView
+    // },
     {
       path: '/move',
       name: 'move',
       component: MoveView
-    }
+    },
+    { path: "/:pathMatch(.*)*", redirect: '/move' }
   ]
 })
 
