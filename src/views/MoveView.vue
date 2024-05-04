@@ -24,7 +24,7 @@
                             <ol>
                                 <li>Klik op de onderstaande knop om je gegevens te downloaden.</li>
                                 <li>Als de download is voltooid, sla je het bestand op een veilige locatie op je apparaat op.</li>
-                                <li>Ga naar de <a href="https://lekkerspeuren.nl/#/upload-tool" target="_blank">uploadtool</a> op de nieuwe website en upload daar het bestand dat zojuist is gedownload.</li>
+                                <li>Ga naar de <a href="https://lekkerspeuren.nl/upload-tool" target="_blank">uploadtool</a> op de nieuwe website en upload daar het bestand dat zojuist is gedownload.</li>
                                 <li>All done! Eitje toch?</li>
                              </ol>
                             <button class="btn btn-primary" @click="downloadUserData">Download mijn data</button>
